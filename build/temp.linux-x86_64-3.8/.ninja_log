@@ -1,0 +1,22 @@
+# ninja log v5
+1	129	1668563739770570499	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/math_functions_cpu.o	fb49a5a1cdee1084
+1	13570	1668563753207039781	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/math_functions_gpu.o	3a630c350c9f9d77
+129	17329	1668563756963170933	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/broadcast_kernel.o	d2895c695d6f3832
+1	18697	1668563758331218696	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/pooling_avg_kernel.o	5fa14143d5d8fbfa
+2	25011	1668563764643439049	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/pooling_max_kernel.o	e28881244a02c21e
+1	32859	1668563772495713100	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/convolution_kernel.o	573ed076ba01a03b
+32859	35606	1668563775247809134	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/gpu.o	bf45ca16121bb3bc
+2	36267	1668563775903832025	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/local_pooling_transpose_gpu.o	7c652c15b269389d
+2	37021	1668563776655858265	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/convolution_transpose_gpu.o	7c3725c94afa2289
+3	37287	1668563776919867475	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/global_pooling_gpu.o	aa1e9057acda34a8
+2	37518	1668563777151875570	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/convolution_gpu.o	ec80b3baf827eeca
+2	37583	1668563777219877945	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/local_pooling_gpu.o	1d726af4d5dfcfe1
+1	48861	1668563788496271324	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/coordinate_map_manager.o	872af951401e89a9
+13570	50199	1668563789832317922	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/broadcast_gpu.o	d3fbf482fcbbb65b
+36267	51739	1668563791376371774	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/direct_max_pool.o	43f18e5006897d7c
+17329	52978	1668563792616415021	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/pruning_gpu.o	a624c1ebb91b9b8a
+35606	54093	1668563793720453521	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/quantization.o	888bee7212d11bb6
+18697	54364	1668563794000463288	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/interpolation_gpu.o	cd46b29c4d473a44
+1	55899	1668563795528516574	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/coordinate_map_gpu.o	98c6a1e471ce54d7
+25012	69844	1668563809477002879	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/home/ustc/sparse/MinkowskiEngine/src/spmm.o	ed4cc652ff60d51f
+37021	91012	1668563830641740389	/home/ustc/sparse/MinkowskiEngine/build/temp.linux-x86_64-3.8/pybind/minkowski.o	889dbaea646625e6
