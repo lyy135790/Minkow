@@ -74,7 +74,7 @@ def data_loader(
     # features and labels
     N = len(coords)
     feats = torch.arange(N * nchannel).view(N, nchannel).to(dtype)
-    label = (torch.rand(batch_size if is_classification else N) * max_label).long()
+    label = (torch.rand(batch_size if is_classification else N) * max_label).long()#交叉熵参数
     return coords, feats, label
 
 def my_data_loader(
@@ -99,3 +99,10 @@ def my_data_loader(
     feats = torch.arange(N * nchannel).view(N, nchannel).to(dtype)
     label = (torch.rand(batch_size if is_classification else N) * max_label).long()
     return coords, feats, label
+
+
+data = ["   X   ", "  X X  ", " XXXXX "]
+
+# Generate coordinates
+coords = [get_coords(data) for i in range(2)]
+print(coords)

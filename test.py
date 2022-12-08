@@ -93,6 +93,22 @@ class MinkowskiConvolution(MinkowskiConvolutionBase):
         )
         self.reset_parameters()
 
+        fw_fn = get_minkowski_function("ConvolutionForward", input_features)
+        return fw_fn(
+            ctx.input_features,
+            kernel_weights,
+            kernel_generator.kernel_size,
+            kernel_generator.kernel_stride,
+            kernel_generator.kernel_dilation,
+            kernel_generator.region_type,
+            kernel_generator.region_offsets,
+            kernel_generator.expand_coordinates,
+            convolution_mode,
+            in_coordinate_map_key,
+            out_coordinate_map_key,
+            coordinate_manager._manager,
+        )
+
 
 
 #ifndef CPU_ONLY

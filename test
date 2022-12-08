@@ -1,0 +1,108 @@
+        in_channels,
+
+
+        out_channels,
+
+
+        kernel_size=-1,
+
+
+        stride=1,
+
+
+        dilation=1,
+
+
+        bias=False,
+
+
+        kernel_generator=None,->
+        KernelGenerator(
+                kernel_size=kernel_size,
+                stride=stride,
+                dilation=dilation,
+                expand_coordinates=expand_coordinates,
+                dimension=dimension,
+            )
+
+
+        #卷积核形状
+        expand_coordinates=False,
+
+
+        #强制生成新坐标。当为True时，输出坐标将是内核形状和输入坐标的外积。
+        convolution_mode=ConvolutionMode.DEFAULT,
+
+
+        dimension=None,
+
+
+
+        Tensor ConvolutionForwardGPU(
+            at::Tensor const &in_feat,                         // ctx.input_features
+            at::Tensor const &kernel,                          // kernel_weights
+            default_types::stride_type const &kernel_size,     // kernel_generator.kernel_size,   kernel_size=-1,
+            default_types::stride_type const &kernel_stride,   //kernel_generator.kernel_stride,   stride=1,
+            default_types::stride_type const &kernel_dilation, //kernel_generator.kernel_dilation,  dilation=1,
+            RegionType::Type const region_type,                //kernel_generator.region_type,   
+            at::Tensor const &offset,                          //kernel_generator.region_offsets,
+            bool const expand_coordinates,                     //kernel_generator.expand_coordinates, expand_coordinates=False,
+            ConvolutionMode::Type const convolution_mode,      //convolution_mode, ConvolutionMode.DEFAULT,
+            CoordinateMapKey *p_in_map_key,                    //in_coordinate_map_key,   input.coordinate_map_key,
+            CoordinateMapKey *p_out_map_key,                   //out_coordinate_map_key, 
+            gpu_manager_type<coordinate_type, TemplatedAllocator> *p_map_manager);coordinate_manager._manager, input._manager,
+
+
+    input 是一个SparseTensor{
+        
+    def __init__(
+        self,
+        features: torch.Tensor,
+        coordinates: torch.Tensor = None,
+        # optional coordinate related arguments
+        tensor_stride: StrideType = 1,
+        coordinate_map_key: CoordinateMapKey = None,
+        coordinate_manager: CoordinateManager = None,
+        quantization_mode: SparseTensorQuantizationMode = SparseTensorQuantizationMode.RANDOM_SUBSAMPLE,
+        # optional manager related arguments
+        allocator_type: GPUMemoryAllocatorType = None,
+        minkowski_algorithm: MinkowskiAlgorithm = None,
+        requires_grad=None,
+        device=None,
+    ):
+    }
+
+    其中最主要的，一个coords，一个feats
+
+    feats=np.array{'x','y','?','k'}
+    coords=np.array{[0,1],[1,0],[1,1],[1,2]}
+    
+    CoordinateMapKey:coords的重用，当使用CMK时自动忽略coords
+
+    coordinate_manager = CoordinateManager(
+                        D=self._D,
+                        coordinate_map_type=CoordinateMapType.CUDA
+                        if coordinates.is_cuda
+                        else CoordinateMapType.CPU,
+                        allocator_type=allocator_type,
+                        minkowski_algorithm=minkowski_algorithm,
+                    )
+
+CoordinateMap(size_type const number_of_coordinates,
+                size_type const coordinate_size,
+                stride_type const &stride = {1},
+                byte_allocator_type alloc = byte_allocator_type())
+      : m_coordinate_size(coordinate_size),
+        m_capacity(0), /* m_capacity is updated in the allocate function */
+        m_tensor_stride(stride), m_byte_allocator(alloc) {
+    allocate(number_of_coordinates);
+    expand_tensor_stride();
+    LOG_DEBUG("tensor stride:", m_tensor_stride);
+  }
+
+
+mapkey makepair（步长。id）
+
+然后使用
+manager.insert_and_map(coordinates, tensor_stride, string_id)
+将coords和coordskey联系起来
